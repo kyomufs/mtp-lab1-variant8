@@ -9,6 +9,7 @@ REQUIRED_PATHS = (
     ".gitmodules",
     ".github/workflows/python-checks.yml",
     "docs/git-setup.md",
+    "docs/clone-report.md",
     "external/sampleproject",
 )
 
