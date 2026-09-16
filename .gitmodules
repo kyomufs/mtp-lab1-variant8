@@ -1,0 +1,3 @@
+[submodule "external/sampleproject"]
+	path = external/sampleproject
+	url = https://github.com/pypa/sampleproject.git
