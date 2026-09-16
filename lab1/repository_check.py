@@ -34,10 +34,21 @@ def format_report(missing_paths: list[str]) -> str:
     return f"Missing required files:\n{missing}"
 
 
+def count_files(project_root: Path, extension: str = ".py") -> int:
+    """Count Python files in the project tree."""
+    return sum(
+        1
+        for _ in project_root.rglob(f"*{extension}")
+        if ".git" not in str(_)
+    )
+
+
 def main() -> None:
     """Check the current project and print the result."""
     project_root = Path(__file__).resolve().parents[1]
     print(format_report(find_missing(project_root)))
+    py_count = count_files(project_root)
+    print(f"Python files found: {py_count}")
 
 
 if __name__ == "__main__":
